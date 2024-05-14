@@ -8,7 +8,7 @@
 2. [Описание базы данных](#database)
 3. [Описание структуры проекта](#structure)
 
-<img src="https://agenda.infn.it/event/20813/images/6201-giphy.gif">
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png">
 
 ### <a name="instruction"></a> Инструкция по запуску
 
@@ -21,14 +21,14 @@
    документацией. Создайте пользователя и далее перейдите к методу auth/login, используя данные пользователя, которого
    вы создали. Теперь необходимо ввести Bearer токен в поле `Authorize` в правом верхнем углу страницы Swagger.
 
-<img src="https://agenda.infn.it/event/20813/images/6201-giphy.gif">
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png">
 
 ### <a name="api"></a> Описание базы данных
 
 Использовалась база данных PostgreSQL. Структура базы данных представлена на следующей диаграмме:
 ![img.png](public/db_diagram.png)
 
-<img src="https://agenda.infn.it/event/20813/images/6201-giphy.gif">
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png">
 
 ### <a name="structure"></a> Описание структуры проекта
 

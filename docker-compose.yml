@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    build:
+      context: ./db
+      dockerfile: db.Dockerfile
+    container_name: lms-db
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - lms-db-data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - lms-network
+
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: lms-api
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+    env_file:
+      - .env.example
+    networks:
+      - lms-network
+
+volumes:
+  lms-db-data:
+    name: lms-db-data
+
+networks:
+  lms-network:
+    name: lms-network
